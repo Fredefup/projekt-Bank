@@ -4,41 +4,39 @@
  * and open the template in the editor.
  */
 
-package commands;
+package dk.cphbusiness.bank.view;
 
+import commands.Command;
+import commands.TargetCommand;
+import controllers.Factory;
 import dk.cphbusiness.bank.contract.BankManager;
 import dk.cphbusiness.bank.contract.dto.AccountSummary;
 import dk.cphbusiness.bank.contract.dto.CustomerIdentifier;
-import controllers.Factory;
-import dk.cphbusiness.dummy.bank.model.Account;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 
 /**
  *
- * @author Ahmed Sadiq
+ * @author Frederik
  */
-public class ListAccountsCommand extends TargetCommand
-{
+public class AccountDetailCommand extends TargetCommand {
 
-    public ListAccountsCommand(String target)
-    {
-	super(target);
+    public AccountDetailCommand(String target) {
+        super(target);
     }
-
+  
     @Override
     public String execute(HttpServletRequest req)
     {
 	BankManager manager = Factory.getInstance().getManager();
-	CustomerIdentifier customer = CustomerIdentifier.fromString("121089-0987");
+        String idAsStr = req.getParameter("cpr");
+
+        CustomerIdentifier customer = CustomerIdentifier.fromString(idAsStr);
 	Collection<AccountSummary> accounts = manager.listCustomerAccounts(customer);
 	
 	req.setAttribute("accounts", accounts);
-	req.setAttribute("message", "This is a test");
 	req.setAttribute("customer", customer);
-	
-	return super.execute(req); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
+        return super.execute(req);
+
+}
 }

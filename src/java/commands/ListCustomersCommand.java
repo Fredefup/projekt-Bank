@@ -33,7 +33,7 @@ public class ListCustomersCommand extends TargetCommand
 	Collection<CustomerSummary> customers = manager.listCustomers();
 	
 	req.setAttribute("customers", customers);
-	req.setAttribute("message", "This is a test");
+
 	
 	return super.execute(req); //To change body of generated methods, choose Tools | Templates.
     }

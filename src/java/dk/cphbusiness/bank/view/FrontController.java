@@ -10,6 +10,8 @@ import commands.ListAccountsCommand;
 import commands.TargetCommand;
 import commands.Command;
 import commands.ListCustomersCommand;
+
+import commands.ViewAccountCommand;
 import dk.cphbusiness.bank.contract.BankManager;
 import dk.cphbusiness.bank.contract.dto.AccountSummary;
 import dk.cphbusiness.bank.contract.dto.CustomerIdentifier;
@@ -40,6 +42,12 @@ public class FrontController extends HttpServlet
 	commands.put("list-customers",new ListCustomersCommand("customer-list.jsp"));
 	commands.put("back",new TargetCommand("main.jsp"));
 	commands.put("main", new TargetCommand("main.jsp"));
+        
+       commands.put("accountdetails", new ViewAccountCommand("accountDetails.jsp"));
+        commands.put("viewaccounts", new AccountDetailCommand("viewAccounts.jsp"));
+
+
+
     }
     
 

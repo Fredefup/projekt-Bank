@@ -13,15 +13,18 @@
         <title>Customers List</title>
     </head>
     <body>
-        <h1>Customers List</h1>
+        <h1>List of Customers</h1>
 	<hr/>
+        <table border="1">
+            <th> Cpr </th> <th> Name </th>
     <c:forEach var="customer" items="${customers}">
-	<br/>${customer.cpr} ${customer.name}
+    <tr><td><a href="Controller?cpr=${customer.cpr}&command=viewaccounts">${customer.cpr}</a></td><td> ${customer.name}</td></tr>
     </c:forEach>
+        </table>
     	<ul>
 	<li>
-	    <!--a href="Back">Back to mainpage</-->
-	    <a href="Controller?=command=back">Back to mainpage</a>
+	    <a href="Controller?=command=back">Back to main page</a>
+	    
 	</li>
 	</ul>
     </body>
