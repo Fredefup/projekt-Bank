@@ -22,8 +22,8 @@
     	<ul>
 	<li>
 	    <!--a href="Back">Back to mainpage</-->
-	    <a href="Controller?=command=back">Back to main page</a>
-            <a href="Controller?=command=transferpage">transfer</a>
+	    <a href="Controller?command=back">Back to main page</a>
+
 	</li>
 	</ul>
     </body>

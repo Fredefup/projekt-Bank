@@ -43,9 +43,14 @@ public class FrontController extends HttpServlet
 	commands.put("back",new TargetCommand("main.jsp"));
 	commands.put("main", new TargetCommand("main.jsp"));
         
-       commands.put("accountdetails", new ViewAccountCommand("accountDetails.jsp"));
+        commands.put("accountdetails", new ViewAccountCommand("accountDetails.jsp"));
         commands.put("viewaccounts", new AccountDetailCommand("viewAccounts.jsp"));
-
+        commands.put("transferpage", new TargetCommand("transfer.jsp"));
+        
+        commands.put("accountlist", new TargetCommand("viewAccounts.jsp"));
+        
+        commands.put("accountdetails", new TargetCommand("accountDetails.jsp"));
+       
 
 
     }
@@ -57,7 +62,9 @@ public class FrontController extends HttpServlet
 	
 	String key = req.getParameter("command");
 	if(key==null) key = "main";
+        System.out.println("command: "+ key);
 	Command command = commands.get(key);
+        System.out.println("blahblaf "+command);
 	String target = command.execute(req);
 	RequestDispatcher dispt = req.getRequestDispatcher(target);
 	dispt.forward(req, resp);

@@ -19,13 +19,13 @@
          <table border="1">
              <th>transaction id</th><th>date</th> <th> amount</th>
         <c:forEach var="transactions" items="${transaction}">
-        <tr><td>${transaction}
+         <tr><td>${transaction}
             </td><td>${transaction}</td><td>${transaction}</td></tr>
         
           </c:forEach>    
          </table>     
-               <a href="Controller?=command=back">Back to main page</a>
-               <a href="Controller?=command=transferpage">transfer</a>
+               <a href="Controller?command=back">Back to main page</a>
+               <a href="Controller?command=transferpage">transfer</a>
         
     </body>
 </html>

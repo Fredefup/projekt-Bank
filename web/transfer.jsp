@@ -13,5 +13,8 @@
     </head>
     <body>
         <h1>transaction page</h1>
+        
+         <a href="Controller?command=accountlist">account list</a>
+         <a href="Controller?command=accountdetails">account details</a>
     </body>
 </html>

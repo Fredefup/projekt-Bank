@@ -22,7 +22,8 @@
         
           </c:forEach>    
          </table>     
-               <a href="Controller?=command=back">Back to main page</a>
+               <a href="Controller?command=back">Back to main page</a>
+               <a href="Controller?command=transferpage">transfer</a>
            
                
         
